@@ -14,15 +14,12 @@ export const textVarient = {
   },
 };
 
-export const staggerContainer = (staggerChildren: any, delayChildren: any) => ({
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren,
-      delayChildren,
-    },
-  },
-});
+import { Variants } from "framer-motion";
+
+
+
+
+
 
 export const fadeIn = (
   direction: string,
@@ -47,3 +44,12 @@ export const fadeIn = (
     },
   },
 });
+export const staggerContainer = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.5,
+      delayChildren: 0.2,
+    },
+  },
+};

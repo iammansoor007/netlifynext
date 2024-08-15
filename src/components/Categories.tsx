@@ -9,6 +9,7 @@ interface CatListProps {
   setSelectedCategoryId: (categoryId: number) => void;
   categories: Category[];
 }
+
 const Categories = ({
   selectedCategoryId,
   setSelectedCategoryId,
@@ -19,23 +20,21 @@ const Categories = ({
       variants={textVarient}
       initial="hidden"
       whileInView="show"
-      className="flex justify-center flex-wrap gap-4"
-    >
+      className="flex justify-center flex-wrap gap-4">
       <button
         onClick={() => setSelectedCategoryId(0)}
         className={`${
-          selectedCategoryId == 0 && "bg-purple-500"
-        } bg-black border-purple-500 border-[1px] text-white font-bold py-2 px-4 rounded-lg`}
-      >
+          selectedCategoryId === 0 ? "bg-purple-500" : ""
+        } bg-black border-purple-500 border-[1px] text-white font-bold py-2 px-4 rounded-lg`}>
         All
       </button>
       {categories.map((cat) => (
         <button
+          key={cat.id} // Added key prop
           onClick={() => setSelectedCategoryId(cat.id)}
           className={`${
-            selectedCategoryId == cat.id && "bg-purple-500"
-          } bg-black border-purple-500 border-[1px] text-white font-bold py-2 px-4 rounded-lg`}
-        >
+            selectedCategoryId === cat.id ? "bg-purple-500" : ""
+          } bg-black border-purple-500 border-[1px] text-white font-bold py-2 px-4 rounded-lg`}>
           {cat.name}
         </button>
       ))}

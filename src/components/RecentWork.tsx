@@ -17,7 +17,7 @@ const RecentWork = () => {
     : work;
   return (
     <>
-      <TitleText title="My Recent Work" />
+      <TitleText title="Our Recent Work" />
       <motion.div variants={textVarient} initial="hidden" whileInView="show">
         <p className="text-white text-center text-lg p-10 md:px-[25%]">
           We put your ideas and thus your wishes in the form of a unique web

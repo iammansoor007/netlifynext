@@ -9,7 +9,7 @@ import { experience } from "@/utils/data";
 const Experience = () => {
   return (
     <div>
-      <TitleText title="My Experience" />
+      <TitleText title="My Education" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
         {experience?.map((exp) => (
           <motion.div
@@ -19,10 +19,10 @@ const Experience = () => {
             whileInView="show"
           >
             <BackgroundGradient className="rounded-[22px] p-4 bg-zinc-900">
-              <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
+              <p className="text-xl sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
                 {exp.startDate} - {exp.endDate}
               </p>
-              <p className="text-sm text-neutral-600">{exp.title}</p>
+              <p className="text-lg text-white">{exp.title}</p>
               <p className="text-gray-500 mt-2">{exp.description}</p>
             </BackgroundGradient>
           </motion.div>
